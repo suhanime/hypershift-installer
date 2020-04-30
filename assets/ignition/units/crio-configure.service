@@ -1,0 +1,11 @@
+[Unit]
+Description=Configure CRI-O to use the pause image
+Before=crio.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /usr/local/bin/crio-configure.sh
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target
